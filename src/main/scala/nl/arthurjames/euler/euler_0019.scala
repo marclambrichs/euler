@@ -35,3 +35,6 @@ def firstDayOfMonth(nrOfDays: List[Int]): List[Int] =
   for nr <- nrOfDays
   do l = l :+ (l.last + nr) % 7
   l
+
+// or shorter
+val firstDays = nrOfDays.toList.scanLeft(1)((a, b) => (a + b) % 7)
